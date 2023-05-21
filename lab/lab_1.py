@@ -22,3 +22,16 @@ def is_win(user_item,bot_item):
             or (user_item == 5 and bot_item in (1, 3)):
         return True
     return False
+
+def win_mes(user_item,bot_item,mode="CPU"):
+
+    if mode == "CPU":
+        if is_win(user_item,bot_item):
+            return "You WIN!"
+        else:
+            return "You LOSE!"
+    elif mode == "Player":
+        if is_win(user_item,bot_item):
+            return "WIN of Player 1"
+        else:
+            return "WIN of Player 2"
