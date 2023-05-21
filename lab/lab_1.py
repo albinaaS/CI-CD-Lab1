@@ -76,6 +76,18 @@ def player(user_item,bot_item):
     print("Player 2 " + items[bot_item] + "\n")
     time.sleep(0.5)
     game_core(bot_item, user_item)
+def game_core(bot_item, user_item):
+
+    print(emoji_items[user_item] + "\t" + emoji.emojize(":right_arrow:") + "\t" + emoji_items[bot_item])
+
+    if user_item == bot_item:
+        print("TIE! MOVE TO NEXT ROUND!")
+        game()
+
+    if i == 2:
+        print(win_mes(user_item, bot_item, mode="Player"))
+    else:
+        print(win_mes(user_item, bot_item))
 def selection(res:str,number:int):
     user_item = 0
     while user_item > number or user_item <= 0:
@@ -107,12 +119,19 @@ def game():
         res = '\n'.join(map(lambda item: f'\t{item[0]}. {item[1].title()} {emoji_items[item[0]]}', items.items()))
     selection(res,number)
 
+    print("==============================================================================")
+    if input("Do you want to start a new game? (y) ").lower() == "y":
+        game()
+    else:
+        print("Awesome game! See you...")
+        exit(0)
+
 def say_hello():
     name = input("What is your first name?")
     print("Hello " + name)
     return "Hello " + name
 
-if name == "main":
+if __name__ == "__main__":
     say_hello()
     try:
         with open("Greeting.txt") as file:
