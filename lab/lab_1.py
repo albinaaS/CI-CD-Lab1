@@ -104,3 +104,18 @@ def say_hello():
     name = input("What is your first name?")
     print("Hello " + name)
     return "Hello " + name
+
+if name == "main":
+    say_hello()
+    try:
+        with open("Greeting.txt") as file:
+            print(file.read())
+    except:
+        pass
+
+    start = str(input("Do you want to start the game? (y) "))
+
+    if start.lower() == "y":
+        game()
+    else:
+        print("\nOK, see you next time...Bye!")
