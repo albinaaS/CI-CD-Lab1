@@ -35,3 +35,6 @@ def win_mes(user_item,bot_item,mode="CPU"):
             return "WIN of Player 1"
         else:
             return "WIN of Player 2"
+
+def lose():
+    return "YOU LOSE!"
