@@ -76,3 +76,24 @@ def test_with_mes_player_par(user_item,bot_item):
                                             ])
 def test_win_mes_win(user_item,bot_item):
     assert win_mes(user_item,bot_item) == "You WIN!"
+    
+@pytest.mark.parametrize('user_item,bot_item',[
+                                                (1,1),
+                                                (1,2),
+                                                (2,2),
+                                                (2,3),
+                                                (2,4),
+                                                (3,1),
+                                                (3,3),
+                                                (4,1),
+                                                (4,3),
+                                                (4,4)
+                                            ])
+def test_win_mes_lose(user_item,bot_item):
+    assert win_mes(user_item,bot_item) == "You LOSE!"
+
+
+def test_say_hello(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: "Pavol")
+    result = say_hello()
+    assert result == "Hello Pavol"
