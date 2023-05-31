@@ -99,3 +99,8 @@ def game():
         number = 5
         res = '\n'.join(map(lambda item: f'\t{item[0]}. {item[1].title()} {emoji_items[item[0]]}', items.items()))
     selection(res,number)
+
+def say_hello():
+    name = input("What is your first name?")
+    print("Hello " + name)
+    return "Hello " + name
