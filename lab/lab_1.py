@@ -55,3 +55,16 @@ def bot(user_item,bot_item):
     print("Computer chose " + items[bot_item] + "\n")
     time.sleep(0.5)
     game_core(bot_item, user_item)
+
+def game_core(bot_item, user_item):
+
+    print(emoji_items[user_item] + "\t" + emoji.emojize(":right_arrow:") + "\t" + emoji_items[bot_item])
+
+    if user_item == bot_item:
+        print("TIE! MOVE TO NEXT ROUND!")
+        game()
+
+    if i == 2:
+        print(win_mes(user_item,bot_item,mode="Player"))
+    else:
+        print(win_mes(user_item, bot_item))
