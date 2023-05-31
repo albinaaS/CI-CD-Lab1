@@ -83,3 +83,7 @@ def selection(res:str,number:int):
     else:
         bot_item = random.randint(1, number)
         bot(user_item, bot_item)
+
+def game():
+
+    choise()
