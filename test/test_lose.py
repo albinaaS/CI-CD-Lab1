@@ -38,3 +38,41 @@ def test_win_mes_player_skip():
 @pytest.mark.skipif(sys.version_info > (3,7),reason="python more 3.7")
 def test_win_mes_player_skipif():
     assert win_mes(3, 3, "Player") == "WIN of Player 1"
+
+@pytest.mark.parametrize('user_item,bot_item',[
+                                                (1,3),
+                                                (1,4),
+                                                (2,1),
+                                                (3,2),
+                                                (3,4),
+                                                (4,2)
+                                            ])
+def test_with_mes_player_par(user_item,bot_item):
+    assert win_mes(user_item,bot_item,"Player") == "WIN of Player 1"
+
+@pytest.mark.parametrize('user_item,bot_item',[
+                                                (1, 1),
+                                                (1, 2),
+                                                (2, 2),
+                                                (2, 3),
+                                                (2, 4),
+                                                (3, 1),
+                                                (3, 3),
+                                                (4, 1),
+                                                (4, 3),
+                                                (4, 4)
+                                            ])
+def test_with_mes_player_par(user_item,bot_item):
+    assert win_mes(user_item,bot_item,"Player") == "WIN of Player 2"
+
+
+@pytest.mark.parametrize('user_item,bot_item',[
+                                                (1,3),
+                                                (1,4),
+                                                (2,1),
+                                                (3,2),
+                                                (3,4),
+                                                (4,2)
+                                            ])
+def test_win_mes_win(user_item,bot_item):
+    assert win_mes(user_item,bot_item) == "You WIN!"
