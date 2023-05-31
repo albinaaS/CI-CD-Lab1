@@ -87,3 +87,15 @@ def selection(res:str,number:int):
 def game():
 
     choise()
+
+    res = ""
+    number = 0
+    if action == "easy":
+        number = 3
+        for a in range(3):
+           print(f'\t{a+1} - {items[a+1]}. {items[a+1].title()} {emoji_items[a+1]}')
+
+    elif action == "hard":
+        number = 5
+        res = '\n'.join(map(lambda item: f'\t{item[0]}. {item[1].title()} {emoji_items[item[0]]}', items.items()))
+    selection(res,number)
