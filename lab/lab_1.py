@@ -68,3 +68,8 @@ def game_core(bot_item, user_item):
         print(win_mes(user_item,bot_item,mode="Player"))
     else:
         print(win_mes(user_item, bot_item))
+
+def selection(res:str,number:int):
+    user_item = 0
+    while user_item > number or user_item <= 0:
+        user_item = int(input(res + "\n\tYour item: "))
