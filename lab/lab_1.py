@@ -38,3 +38,12 @@ def win_mes(user_item,bot_item,mode="CPU"):
 
 def lose():
     return "YOU LOSE!"
+
+def choise():
+    global i
+    if i == 0:
+        print("1 - vs CPU\n2 - vs Player")
+        i = int(input())
+        while i != 1 and i != 2:
+            print(f"Wrong, try again:")
+            i = int(input())
