@@ -47,3 +47,11 @@ def choise():
         while i != 1 and i != 2:
             print(f"Wrong, try again:")
             i = int(input())
+
+def bot(user_item,bot_item):
+    print("\nYou chose " + items[user_item])
+    time.sleep(1)
+
+    print("Computer chose " + items[bot_item] + "\n")
+    time.sleep(0.5)
+    game_core(bot_item, user_item)
