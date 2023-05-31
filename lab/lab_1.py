@@ -73,3 +73,13 @@ def selection(res:str,number:int):
     user_item = 0
     while user_item > number or user_item <= 0:
         user_item = int(input(res + "\n\tYour item: "))
+    if i == 2:
+        a = "\n" * 15
+        print(f"{a}" + "Do not scroll up :)\n")
+        bot_item = 0
+        while bot_item > number or bot_item <= 0:
+            bot_item = int(input(res + "\n\tYour item: "))
+        player(user_item, bot_item)
+    else:
+        bot_item = random.randint(1, number)
+        bot(user_item, bot_item)
